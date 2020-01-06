@@ -1,17 +1,16 @@
 #Basic
 for_window [class="^.*"] border pixel 1
-gaps inner 3
-gaps outer 3
 font pango:mono 12
 set $mod Mod4
 set $term --no-startup-id urxvt
 set $mod Mod4
 
 #External Scripts
-exec_always --no-startup-id feh --bg-scale ~/.config/bg.png
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-exec --no-startup-id mpd
-exec --no-startup-id mpdscribble
+#exec_always --no-startup-id feh --bg-scale ~/.config/bg.png
+#exec_always --no-startup-id ~/.config/polybar/launch.sh
+#exec_always --no-startup-id compton
+#exec --no-startup-id mpd
+#exec --no-startup-id mpdscribble
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -22,11 +21,15 @@ set_from_resource $bg i3wm.color2
 set_from_resource $bf i3wm.color4
 
 # class                 border  backgr. text indicator child_border
-client.focused          $bf     $bf     $fg  $bf       $bf
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+#client.focused          $bf     $bf     $fg  $bf       $bf
+#client.focused_inactive $bg     $bg     $fg  $bg       $bg
+#client.unfocused        $bg     $bg     $fg  $bg       $bg
+#client.urgent           $bg     $bg     $fg  $bg       $bg
+#client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+#thinkpad keys
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 
 # Letter Key Bindings
@@ -35,7 +38,7 @@ bindsym $mod+Shift+q		kill
 
 #bindsym $mod+w			exec --no-startup-id openweb
 #bindsym $mod+w			exec $term -e sudo wifi-menu
-bindsym $mod+Shift+w		exec --no-startup-id firefox 
+bindsym $mod++w		exec --no-startup-id firefox 
 
 #bindsym $mod+e			exec $term -e neomutt
 ##bindsym $mod+Shift+e
@@ -44,7 +47,6 @@ bindsym $mod+r 			exec $term -e ranger
 bindsym $mod+Shift+r		exec $term -e sudo ranger /
 
 bindsym $mod+t			split toggle
-bindsym $mod+Shift+t		gaps inner current set 15; gaps outer current set 15
 
 #bindsym $mod+y			exec $term -e calcurse
 bindsym $mod+Shift+y  		resize shrink width 8 px or 8 ppt
@@ -65,11 +67,8 @@ bindsym $mod+p			exec --no-startup-id mpc toggle
 #bindsym $mod+a			[instance="math"] scratchpad show; [instance="math"] move position center
 #bindsym $mod+Shift+a		exec $term -e ncpamixer
 
-bindsym $mod+s			gaps inner current plus 5
-bindsym $mod+Shift+s		gaps inner current minus 5
 
 bindsym $mod+d			exec --no-startup-id rofi -show run -font "Dina 10"
-bindsym $mod+Shift+d		gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f			fullscreen toggle
 ##bindsym $mod+Shift+f
@@ -89,10 +88,8 @@ bindsym $mod+Shift+k		move up 8
 bindsym $mod+l			focus right
 bindsym $mod+Shift+l		move right 8
 
-bindsym $mod+z			gaps outer current plus 5
-bindsym $mod+Shift+z		gaps outer current minus 5
 
-bindsym $mod+x			exec --no-startup-id lock
+bindsym $mod+x			exec --no-startup-id slock
 #bindsym $mod+Shift+x		exec prompt "Are you sure you want to shutdown?" "$shutdown"
 
 bindsym $mod+c			reload	
