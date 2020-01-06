@@ -4,34 +4,34 @@ configs
 	i3config
 	polybar config
 	scripts?
-	backlight/volume controls (?)
+	backlight/volume controls
 	shell rc
 	vim config
 	.Xresources (urxvt config)
 
 software:
-	i3/compton/polybar
+	i3
 	networkmanager
 	vim
 	latex
 	build environment
 	lisp
 	TLP, other laptop battery managers
-	mupdf, inotify script?
-	resiliosync obv
+	zathura
 	lock screen
+	ssh mounting
+	brightness/volume buttons
 
 vim
 	pathogen
-	ale
 	auto-pairs
 	supertab
 	ultisnips
 	vim-latex-live-preview
 	vim-snippets
+	(all in dots)
 
 fonts
-	siji for icons
 	Dina or some other fixed font
 	colors are in x
 	
